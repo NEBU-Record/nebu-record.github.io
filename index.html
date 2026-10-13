@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEBU Publishing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single narrow column like a label sleeve; gold collar mark on top, plain facts below */
+:root {
+  --bg: #F6F3EC;
+  --surface: #EDE7DA;
+  --fg: #1C1A16;
+  --muted: #5F584B;
+  --gold: #8C6A12;
+  --line: #D6CCB8;
+  --display: "Marcellus", "Trajan Pro", Georgia, serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12110E; --surface: #1C1A15; --fg: #EFE9DC; --muted: #A79F8E; --gold: #D4AF37; --line: #2E2A22;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12110E; --surface: #1C1A15; --fg: #EFE9DC; --muted: #A79F8E; --gold: #D4AF37; --line: #2E2A22;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 1rem; line-height: 1.6;
+  padding-inline: 20px; padding-block: 0;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding-block: 3rem 4rem; display: flex; flex-direction: column; gap: 3.5rem; }
+header { display: flex; align-items: center; gap: 0.9rem; }
+header svg { width: 52px; height: auto; flex: none; }
+.wordmark { font-family: var(--display); font-size: 1.35rem; letter-spacing: 0.22em; text-transform: uppercase; }
+.wordmark span { color: var(--gold); }
+.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.9rem; }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; margin: 0 0 1.2rem; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; margin: 0 0 1.2rem; text-wrap: balance; }
+p { margin: 0; max-width: 65ch; }
+.lede { font-size: 1.15rem; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.5rem 2rem; }
+.item { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; padding-top: 1rem; border-top: 1px solid var(--gold); }
+.item h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+.item p { color: var(--muted); font-size: 0.95rem; }
+ol.steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+ol.steps li { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+ol.steps li:first-child { border-top: 1px solid var(--line); }
+.n { font-family: var(--mono); color: var(--gold); font-variant-numeric: tabular-nums; padding-top: 0.1rem; }
+ol.steps strong { display: block; font-weight: 600; }
+ol.steps span { color: var(--muted); font-size: 0.95rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+.tag { font-family: var(--mono); font-size: 0.78rem; padding: 0.3rem 0.7rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+.contact { background: var(--surface); padding: 1.6rem; display: flex; flex-direction: column; gap: 1rem; }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.mail code { font-family: var(--mono); font-size: 1rem; user-select: all; word-break: break-all; }
+button { font: 500 0.85rem var(--body); color: var(--bg); background: var(--gold); border: 0; padding: 0.45rem 0.9rem; cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1.2rem; margin: 0; font-size: 0.92rem; }
+dt { color: var(--muted); }
+dd { margin: 0; min-width: 0; }
+footer { font-size: 0.8rem; color: var(--muted); font-family: var(--mono); }
+@media (max-width: 420px) { dl { grid-template-columns: 1fr; gap: 0.1rem; } dd { margin-bottom: 0.6rem; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <svg viewBox="0 0 64 40" aria-hidden="true">
+      <path d="M6 6 Q32 44 58 6" fill="none" stroke="var(--gold)" stroke-width="3"/>
+      <path d="M12 6 Q32 34 52 6" fill="none" stroke="var(--gold)" stroke-width="2"/>
+      <path d="M18 6 Q32 24 46 6" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+      <line x1="2" y1="6" x2="62" y2="6" stroke="var(--gold)" stroke-width="3"/>
+      <circle cx="4" cy="6" r="3.5" fill="var(--gold)"/><circle cx="60" cy="6" r="3.5" fill="var(--gold)"/>
+    </svg>
+    <div class="wordmark">NEBU <span>Publishing</span></div>
+  </header>
+
+  <section>
+    <p class="eyebrow">Independent publisher and label · Lyon, France</p>
+    <h1>Publishing for Brazilian funk and phonk songwriters</h1>
+    <p class="lede">We sign and administer MCs, DJs and producers, take care of their publishing worldwide, and release music through our label, NEBU Records.</p>
+  </section>
+
+  <section>
+    <h2>What we do</h2>
+    <div class="grid">
+      <div class="item"><h3>Registration</h3><p>Each work gets declared with its writers, splits and ISWC, so streams can be matched to the song.</p></div>
+      <div class="item"><h3>Collection</h3><p>Performance and mechanical royalties, collected through SACEM internationally and The MLC in the United States.</p></div>
+      <div class="item"><h3>NEBU Records</h3><p>Our label releases our artists' tracks on all streaming platforms, with promotion built around each release.</p></div>
+      <div class="item"><h3>Administration</h3><p>Splits between co-writers, contracts in the writer's language, and clear royalty statements every period.</p></div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2 style="margin:0">Contact</h2>
+    <div class="mail">
+      <code id="mail">blvckcowbell.prod@gmail.com</code>
+      <button type="button" id="copy">Copy email</button>
+    </div>
+    <dl>
+      <dt>Company</dt><dd>NEBU Publishing, trade name of Pierre Mansuy EI</dd>
+      <dt>Location</dt><dd>Lyon, France</dd>
+      <dt>Languages</dt><dd>French, English, Portuguese</dd>
+    </dl>
+  </section>
+
+  <footer>NEBU Publishing · 2026</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var btn = this, text = document.getElementById('mail').textContent;
+  function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1600); }
+  function fallback() { var r = document.createRange(); r.selectNodeContents(document.getElementById('mail')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, fallback); } else { fallback(); }
+});
+</script>
+</body>
+</html>
